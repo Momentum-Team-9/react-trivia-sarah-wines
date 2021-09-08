@@ -1,27 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const Category = () => {
-  const [categories, setCategories] = useState([]);
-
+export const Category = ({ id }) => {
   useEffect(() => {
-    axios.get(`https://opentdb.com/api_category.php`).then((response) => {
-      setCategories(
-        response.data.trivia_categories.map((category) => [
-          category.name,
-          category.id,
-        ])
-      );
-    });
-  }, []);
-  console.log(categories);
-  return (
-    <>
-      <ul>
-        {categories.map((category) => (
-          <li key={category[1]}>{category[0]}</li>
-        ))}
-      </ul>
-    </>
-  );
+    console.log('it runs');
+    axios
+      .get(`https://opentdb.com/api.php?amount=10&category=${id}`)
+      .then((response) => {
+        console.log(response);
+      });
+  }, [id]);
+  return <p>hello {id}</p>;
 };

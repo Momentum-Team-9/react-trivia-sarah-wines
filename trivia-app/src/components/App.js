@@ -1,15 +1,13 @@
 import React from 'react';
-import { Category } from './Category';
+import { CategoryList } from './CategoryList';
 
 export const App = () => {
   return (
-    <>
-      <div className="App">
-        <h1>Trivia App</h1>
-      </div>
+    <div>
+      <h1>Trivia Game</h1>
       <div>
-        <Category />
+        <CategoryList />
       </div>
-    </>
+    </div>
   );
 };
