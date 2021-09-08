@@ -19,7 +19,7 @@ export const Category = () => {
     <>
       <ul>
         {categories.map((category) => (
-          <li class="repo">{category[0]}</li>
+          <li key={category[1]}>{category[0]}</li>
         ))}
       </ul>
     </>
