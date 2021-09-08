@@ -15,5 +15,13 @@ export const Category = () => {
     });
   }, []);
   console.log(categories);
-  return <></>;
+  return (
+    <>
+      <ul>
+        {categories.map((category) => (
+          <li class="repo">{category[0]}</li>
+        ))}
+      </ul>
+    </>
+  );
 };
