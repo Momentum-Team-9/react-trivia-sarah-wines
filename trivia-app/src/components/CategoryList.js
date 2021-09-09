@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Category } from './Category';
+import { Questions } from './Questions';
 
 export const CategoryList = () => {
   const [categories, setCategories] = useState([]);
@@ -11,7 +11,7 @@ export const CategoryList = () => {
       setCategories(response.data.trivia_categories);
     });
   }, []);
-  console.log(categories);
+  // console.log(categories);
   return (
     <div>
       {categories.map((category) => (
@@ -23,7 +23,7 @@ export const CategoryList = () => {
         </button>
       ))}
       <div>
-        <Category id={selectedCategory} />
+        {selectedCategory ? <Questions id={selectedCategory} /> : <div></div>}
       </div>
     </div>
   );
