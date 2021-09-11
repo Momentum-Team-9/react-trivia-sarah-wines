@@ -23,7 +23,13 @@ export const CategoryList = () => {
         </button>
       ))}
       <div>
-        {selectedCategory ? <Questions id={selectedCategory} /> : <div></div>}
+        {selectedCategory ? (
+          <>
+            <Questions id={selectedCategory} />{' '}
+          </>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );
