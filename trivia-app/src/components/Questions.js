@@ -27,13 +27,15 @@ export const Questions = ({ id }) => {
         answers.push(result.incorrect_answers[2]);
         answers.sort(() => Math.random() - 0.5);
         return (
-          <>
-            <p key={idx}>{he.decode(result.question)}</p>
+          <div className="questionsContainer">
+            <div className="questions">
+              <p key={idx}>{he.decode(result.question)}</p>
+            </div>
             <button>{he.decode(answers[0])}</button>
             <button>{he.decode(answers[1])}</button>
             <button>{he.decode(answers[2])}</button>
             <button>{he.decode(answers[3])}</button>
-          </>
+          </div>
         );
       })}
     </>

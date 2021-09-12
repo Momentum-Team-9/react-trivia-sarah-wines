@@ -14,14 +14,19 @@ export const CategoryList = () => {
   // console.log(categories);
   return (
     <div>
-      {categories.map((category) => (
-        <button
-          onClick={() => setSelectedCategory(category.id)}
-          key={category.id}
-        >
-          {category.name}
-        </button>
-      ))}
+      <div>
+        <div className="categoryDirections">Category Selection</div>
+        <div className="categoryContainer">
+          {categories.map((category) => (
+            <button
+              onClick={() => setSelectedCategory(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
+      </div>
       <div>
         {selectedCategory ? (
           <>
