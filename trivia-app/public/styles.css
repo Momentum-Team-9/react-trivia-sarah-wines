@@ -24,6 +24,7 @@ button {
   width: 200px;
   padding: 10px;
   transition-duration: 0.4s;
+  margin-left: 10%;
 }
 button:hover {
   background-color: white;
