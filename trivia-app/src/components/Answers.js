@@ -5,6 +5,18 @@ export const Answers = (result) => {
   // useEffect(() => {
   //   console.log(result.props.correct_answer);
   // }, [result]);
+  const [isCorrect, setIsCorrect] = useState(null);
+
+  const handleCorrect = (selection) => {
+    if (selection === correct) {
+      document.getElementById('0').classList.remove('default');
+      setIsCorrect(true);
+    } else {
+      document.getElementById('0').classList.remove('default');
+      setIsCorrect(false);
+    }
+  };
+
   let answers = [];
   const correct = result.props.correct_answer;
   answers.push(correct);
@@ -13,26 +25,29 @@ export const Answers = (result) => {
   answers.push(result.props.incorrect_answers[2]);
   answers.sort(() => Math.random() - 0.5);
 
-  function isCorrect(selection) {
-    if (selection === correct) {
-      console.log('Correct!!!');
-    } else {
-      console.log('YOU DUMB');
-    }
-  }
+  // function setIsCorrect(selection) {
+  //   if (selection === correct) {
+  //     isCorrect = true;
+  //     console.log(isCorrect);
+  //   } else {
+  //     isCorrect = false;
+  //     console.log(isCorrect);
+  //   }
+  // }
+
   return (
     <>
-      <p>
-        <button onClick={() => isCorrect(answers[0])}>
+      <p id="0" className={`default ${isCorrect ? 'correct' : 'wrong'}`}>
+        <button className="answers" onClick={() => handleCorrect(answers[0])}>
           {he.decode(answers[0])}
         </button>
-        <button onClick={() => isCorrect(answers[1])}>
+        <button className="answers" onClick={() => handleCorrect(answers[1])}>
           {he.decode(answers[1])}
         </button>
-        <button onClick={() => isCorrect(answers[2])}>
+        <button className="answers" onClick={() => handleCorrect(answers[2])}>
           {he.decode(answers[2])}
         </button>
-        <button onClick={() => isCorrect(answers[3])}>
+        <button className="answers" onClick={() => handleCorrect(answers[3])}>
           {he.decode(answers[3])}
         </button>
       </p>

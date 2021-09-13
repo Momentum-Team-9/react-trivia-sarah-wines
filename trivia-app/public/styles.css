@@ -13,18 +13,17 @@ body {
 button {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   background-color: darkmagenta;
   color: white;
-
-  margin: 3px;
+  width: 100%;
   font-family: sans-serif;
   font-size: 20px;
   border-radius: 12px;
   height: 100px;
-  width: 200px;
-  padding: 10px;
+  margin-bottom: 5px;
   transition-duration: 0.4s;
-  margin-left: 10%;
 }
 button:hover {
   background-color: white;
@@ -60,5 +59,32 @@ button:hover {
   margin-top: 30px;
 }
 .categoryContainer {
-  column-count: 6;
+  column-count: 4;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
+.answers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: darkmagenta;
+  color: white;
+  width: 50%;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 12px;
+  height: 100px;
+  margin-bottom: 5px;
+  transition-duration: 0.4s;
+}
+
+.default {
+  background-color: lightgray;
 }
